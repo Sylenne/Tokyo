@@ -52,19 +52,55 @@
  z-index: 9999;
  background: url('') 50% 50% no-repeat rgb(249,249,249);
 }
+            .video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+}
+.video-container video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%; 
+  min-height: 100%; 
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+}
+.box {
+        width: 30%;
+        height: 200px;
+        
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
     </style>
 
 </head>
 <body>
     <div class="loader">
 </div>
-   
-<video autoplay loop muted  style="position: fixed; width: 100%; z-index: -1;">
-  <source  style=" position: absolute;  min-width: 116%;
-  min-height: 116%;" src="video_2.mp4">
+   <div class="video-container">
+<video autoplay loop muted  >
+  <source  src="video_2.mp4" type="video/mp4" >
      </video>
-
+    </div>
+      
+      <div class="box"> 
      <img src="img/tokyo.png" style="position: fixed; width: 16%; margin-left: 9%; z-index: -1;"></img>
+         </div>
+
 
 <div style="display: flex; flex-direction: row; justify-content: center;">
     <img src="img/image1.jpeg" style="width: 27%; height: 27%; margin-right: 5%; margin-top: 5%;"></img>
